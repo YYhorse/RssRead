@@ -46,12 +46,6 @@ public class MainActivity extends Activity{
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 PopMessageUtil.Log("内部加载" + url);
                 webView.loadUrl(url);
-//                if (url.compareTo(PublicUrl.MyUrl) != 0 && url.compareTo(PublicUrl.MainUrl) != 0) {
-//                    SwitchUtil.switchActivity(MainActivity.this, WebviewActivity.class)
-//                            .addString("url", url)
-//                            .addString("title", "唐小腰")
-//                            .switchToForResult(2);
-//                }
                 return true;
             }
 

@@ -53,5 +53,61 @@
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/linearLayout"></LinearLayout>
+        android:id="@+id/linearLayout">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:id="@+id/imageView"
+                android:src="@drawable/boke_on" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="   博客大全"
+                android:textColor="@color/red_dark"
+                android:id="@+id/textView2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="1sp"
+            android:layout_height="match_parent"
+            android:background="#cdcdcd"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            ></LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:id="@+id/imageView2"
+                android:src="@drawable/my_off" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="   我的订阅"
+                android:textColor="@color/gray"
+                android:id="@+id/textView3" />
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
