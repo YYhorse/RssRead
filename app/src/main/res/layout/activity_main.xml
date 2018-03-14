@@ -4,36 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    <com.tencent.smtt.sdk.WebView
-        android:id="@+id/webView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/relativeLayout"
-        android:layout_above="@+id/linearLayout" />
-    <com.wang.avi.AVLoadingIndicatorView
-        android:id="@+id/loadingView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        style="@style/AVLoadingIndicatorView"
-        android:background="@color/red_dark"
-        app:indicatorName="加载中"
-        app:indicatorColor="@color/white"
-        android:paddingTop="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:visibility="gone"
-        />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:id="@+id/relativeLayout"
         android:background="@color/red_dark"
-        android:orientation="horizontal"
-        android:gravity="center"
         >
 
         <TextView
@@ -44,8 +20,21 @@
             android:id="@+id/textView"
             android:textStyle="bold"
             android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/imageView2"
+            android:src="@drawable/add"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="10dp"
+            android:onClick="ClickAddBlogMethod"
             />
-    </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -61,12 +50,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
+            android:onClick="ClickBlogListMethod"
             >
 
             <ImageView
                 android:layout_width="50px"
                 android:layout_height="50px"
-                android:id="@+id/imageView"
+                android:id="@+id/Main_Bloglist_image"
                 android:src="@drawable/boke_on" />
 
             <TextView
@@ -75,7 +65,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="   博客大全"
                 android:textColor="@color/red_dark"
-                android:id="@+id/textView2" />
+                android:id="@+id/Main_Bloglist_txt" />
         </LinearLayout>
 
         <LinearLayout
@@ -93,12 +83,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
+            android:onClick="ClickMyBlogMethod"
             >
 
             <ImageView
                 android:layout_width="50px"
                 android:layout_height="50px"
-                android:id="@+id/imageView2"
+                android:id="@+id/Main_Myblog_image"
                 android:src="@drawable/my_off" />
 
             <TextView
@@ -107,7 +98,16 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="   我的订阅"
                 android:textColor="@color/gray"
-                android:id="@+id/textView3" />
+                android:id="@+id/Main_Myblog_txt" />
         </LinearLayout>
     </LinearLayout>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Main_BlogList_listView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/linearLayout"
+        android:layout_below="@+id/relativeLayout" />
 </RelativeLayout>

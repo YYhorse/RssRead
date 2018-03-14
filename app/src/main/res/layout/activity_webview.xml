@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.rssread.www.Util.SildingFinishLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/main_Slidelayout"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/red"
+        android:id="@+id/linearLayout4"
+        android:gravity="center_vertical"
+        >
+        <RelativeLayout
+            android:id="@+id/ll_actionbar_back"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:background="@drawable/ripple_ab_back"
+            android:onClick="ClickWebviewBackMethod"
+            >
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ab_back"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/imageView" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="返回"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="10dp"
+                android:textSize="16dp"
+                android:id="@+id/textView"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="博客浏览"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/Webview_Title_txt"
+            android:textColor="#ffffffff"
+            android:textSize="18dp" />
+    </RelativeLayout>
+    <com.tencent.smtt.sdk.WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ShomeWebview"
+        android:layout_below="@+id/linearLayout4"
+        >
+    </com.tencent.smtt.sdk.WebView>
+
+    <View
+        android:id="@+id/top_fade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/top_fade"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/fire_Slidelayout"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal" />
+</com.rssread.www.Util.SildingFinishLayout>

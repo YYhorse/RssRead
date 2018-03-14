@@ -4,4 +4,6 @@
     <color name="red_dark">#b12f3e</color>
     <color name="white">#FFFFFF</color>
     <color name="gray">#cdcdcd</color>
+    <color name="top_fade">#46000000</color>
+    <color name="backgray">#f5f5f5</color>
 </resources>
