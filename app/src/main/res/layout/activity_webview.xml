@@ -50,6 +50,18 @@
             android:id="@+id/Webview_Title_txt"
             android:textColor="#ffffffff"
             android:textSize="18dp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/imageView3"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/save"
+            android:layout_marginRight="10dp"
+            android:onClick="ClickSaveUrlMethod"
+            />
     </RelativeLayout>
     <com.tencent.smtt.sdk.WebView
         android:layout_width="match_parent"
@@ -72,4 +84,34 @@
         android:layout_height="match_parent"
         android:layout_marginTop="40dp"
         android:orientation="horizontal" />
+
+    <RelativeLayout
+        android:id="@+id/Showloading_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayout"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:layout_below="@+id/linearLayout4"
+        android:visibility="gone"
+        >
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="RSS阅读器"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#D7D7D7"
+            android:textSize="12dp" />
+    </RelativeLayout>
 </com.rssread.www.Util.SildingFinishLayout>
