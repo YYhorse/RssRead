@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="博客"
+            android:text="博客大全"
             android:id="@+id/textView"
             android:textStyle="bold"
             android:textColor="@color/white"

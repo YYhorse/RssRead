@@ -8,9 +8,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.rssread.www.Activity.MainActivity;
+import com.rssread.www.Activity.WebviewActivity;
 import com.rssread.www.Adapter.Item.BlogItem;
 import com.rssread.www.R;
 import com.rssread.www.Util.PopMessageUtil;
+import com.rssread.www.Util.SwitchUtil;
 
 import java.util.List;
 
@@ -74,9 +76,27 @@ public class BlogListAdapter extends BaseAdapter {
         viewHolder.BlogItem_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopMessageUtil.Log("点击" + blogItems.get(position).getTitle()+"|"+blogItems.get(position).getUrl());
+                PopMessageUtil.Log("点击" + blogItems.get(position).getTitle() + "|" + blogItems.get(position).getUrl());
+                SwitchUtil.switchActivity(mContext, WebviewActivity.class)
+                        .addString("url", blogItems.get(position).getUrl())
+                        .addString("title", blogItems.get(position).getTitle())
+                        .switchToForResult(2);
+            }
+        });
+        //----------------长按删除-----------------//
+        viewHolder.BlogItem_layout.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                mContext.DelItemPostion = position;
+                mContext.DelBlogInfoMessage("删除博客","是否删除该博客");
+                return false;
             }
         });
         return convertView;
+    }
+
+    public void UpdataBlogInfo(List<BlogItem> bi){
+        this.blogItems = bi;
+        notifyDataSetChanged();
     }
 }
