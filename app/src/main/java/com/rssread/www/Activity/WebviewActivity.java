@@ -78,10 +78,7 @@ public class WebviewActivity extends Activity{
                 webView.loadUrl(url);
                 return true;
             }
-
-            public void onPageFinished(WebView view, String url) {
-            }
-
+            public void onPageFinished(WebView view, String url) {}
             public void onReceivedError(WebView var1, int var2, String var3, String var4) {
                 PopMessageUtil.Log("网页加载失败");
             }
@@ -99,7 +96,7 @@ public class WebviewActivity extends Activity{
     }
 
     public void ClickSaveUrlMethod(View view){
-        PopMessageUtil.Log("点击收藏网页:"+webView.getTitle()+"|"+webView.getUrl()+"|");
+        PopMessageUtil.Log("点击收藏网页:"+webView.getTitle()+"|"+webView.getUrl());
 
     }
 

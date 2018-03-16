@@ -12,10 +12,13 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.rssread.www.Adapter.Function.BlogListAdapter;
+import com.rssread.www.Adapter.Function.MyBlogListAdapter;
 import com.rssread.www.Adapter.Item.BlogItem;
+import com.rssread.www.Adapter.Item.MyBlogItem;
 import com.rssread.www.R;
 import com.rssread.www.Util.BlogListJson;
 import com.rssread.www.Util.ColorUtils;
+import com.rssread.www.Util.MyBlogListJson;
 import com.rssread.www.Util.PopMessageUtil;
 import com.rssread.www.Util.PrefUtils;
 
@@ -28,11 +31,17 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 public class MainActivity extends Activity {
     private ImageView Bloglist_image, Myblog_image;
     private TextView Bloglist_txt, Myblog_txt;
+
     private BlogListAdapter blogListAdapter;
     private List<BlogItem> blogItemList;
     private ListView blogList_listview;
-
     private BlogListJson blogListJson;                                      //博客大全  本地存储格式
+
+
+    private MyBlogListAdapter myBlogListAdapter;
+    private List<MyBlogItem> myBlogItemList;
+    private ListView myblogList_listview;
+    private MyBlogListJson myBlogListJson;                                  //我订阅博客 本地存储格式
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +62,14 @@ public class MainActivity extends Activity {
         blogListAdapter = new BlogListAdapter(this, blogItemList);
         blogList_listview.setAdapter(blogListAdapter);
 
+        myblogList_listview = (ListView) findViewById(R.id.Main_MyBlogList_listView);
+        myBlogItemList = new ArrayList<MyBlogItem>();
+        myBlogListAdapter = new MyBlogListAdapter(this,myBlogItemList);
+        myblogList_listview.setAdapter(myBlogListAdapter);
+
+
         blogListJson = new BlogListJson();
+        myBlogListJson = new MyBlogListJson();
     }
 
     /******************************************************************************************
@@ -61,11 +77,17 @@ public class MainActivity extends Activity {
      ******************************************************************************************/
     private void GetSaveBlogList() {
         Gson gson = new Gson();
-        PopMessageUtil.Log(PrefUtils.getMemoryBlogString("BlogListInfo"));
+        PopMessageUtil.Log("博客大全信息="+PrefUtils.getMemoryBlogString("BlogListInfo"));
+        PopMessageUtil.Log("我的博客信息="+PrefUtils.getMemoryMyBlogString("MyBlogListInfo"));
         if (PrefUtils.getMemoryBlogString("BlogListInfo").compareTo("")!=0) {
             blogListJson = gson.fromJson(PrefUtils.getMemoryBlogString("BlogListInfo"), BlogListJson.class);
             blogItemList = blogListJson.getBlogItemList();
             blogListAdapter.UpdataBlogInfo(blogItemList);
+        }
+        if (PrefUtils.getMemoryMyBlogString("MyBlogListInfo").compareTo("")!=0){
+            myBlogListJson = gson.fromJson(PrefUtils.getMemoryMyBlogString("MyBlogListInfo"),MyBlogListJson.class);
+            myBlogItemList = myBlogListJson.getMyBlogItems();
+            myBlogListAdapter.UpdataBlogInfo(myBlogItemList);
         }
     }
 
@@ -77,6 +99,8 @@ public class MainActivity extends Activity {
         Bloglist_txt.setTextColor(ColorUtils.getColor(R.color.red_dark));
         Myblog_image.setImageResource(R.drawable.my_off);
         Myblog_txt.setTextColor(ColorUtils.getColor(R.color.gray));
+        blogList_listview.setVisibility(View.VISIBLE);
+        myblogList_listview.setVisibility(View.GONE);
     }
 
     /******************************************************************************************
@@ -87,6 +111,8 @@ public class MainActivity extends Activity {
         Bloglist_txt.setTextColor(ColorUtils.getColor(R.color.gray));
         Myblog_image.setImageResource(R.drawable.my_on);
         Myblog_txt.setTextColor(ColorUtils.getColor(R.color.red_dark));
+        blogList_listview.setVisibility(View.GONE);
+        myblogList_listview.setVisibility(View.VISIBLE);
     }
 
     /******************************************************************************************
