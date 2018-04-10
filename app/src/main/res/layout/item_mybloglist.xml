@@ -6,7 +6,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="52dp"
         android:gravity="center_vertical"
         android:id="@+id/MyBlogItem_layout"
         >
@@ -16,7 +16,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@drawable/circle"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="50dp"
             android:gravity="center"
             >
 
@@ -36,8 +36,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="内容"
-            android:id="@+id/BlogItem_Context"
-            android:layout_marginLeft="40dp"
+            android:id="@+id/MyBlogItem_Context"
+            android:layout_marginLeft="10dp"
             android:layout_gravity="center_vertical" />
     </LinearLayout>
 

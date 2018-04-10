@@ -9,6 +9,7 @@
         android:layout_height="40dp"
         android:gravity="center_vertical"
         android:id="@+id/BlogCategrayItem_Layout"
+        android:background="@color/gray"
         >
 
         <TextView
@@ -16,8 +17,10 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="测试"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:id="@+id/BlogCategrayItem_Title"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="30dp"
             />
     </LinearLayout>
 </LinearLayout>

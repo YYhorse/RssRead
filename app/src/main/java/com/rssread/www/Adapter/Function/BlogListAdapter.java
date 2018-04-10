@@ -78,9 +78,10 @@ public class BlogListAdapter extends BaseAdapter {
             public void onClick(View v) {
                 PopMessageUtil.Log("点击" + blogItems.get(position).getTitle() + "|" + blogItems.get(position).getUrl());
                 SwitchUtil.switchActivity(mContext, WebviewActivity.class)
+                        .addBoolean("type",true)
                         .addString("url", blogItems.get(position).getUrl())
                         .addString("title", blogItems.get(position).getTitle())
-                        .switchToForResult(2);
+                        .switchToForResult(1);
             }
         });
         //----------------长按删除-----------------//
@@ -88,6 +89,7 @@ public class BlogListAdapter extends BaseAdapter {
             @Override
             public boolean onLongClick(View v) {
                 mContext.DelItemPostion = position;
+                mContext.DelItemType = 0;
                 mContext.DelBlogInfoMessage("删除博客","是否删除该博客");
                 return false;
             }

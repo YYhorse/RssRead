@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="400dp"
-    android:layout_height="250dp">
+    android:layout_height="300dp">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -17,16 +17,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="新增博客"
+            android:text="订阅博客"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:id="@+id/Dialog_Title_txt" />
+            android:id="@+id/textView2" />
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center_vertical"
         android:layout_marginTop="10dp"
@@ -38,14 +38,14 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="博客名称:"
             android:textColor="@color/black"
-            android:id="@+id/Dialog_BlogName_txt"
+            android:id="@+id/textView3"
             android:layout_marginLeft="20dp"
             />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Dialog_BlogName_etxt"
+            android:id="@+id/Dialog_MyBlogName_etxt"
             android:layout_weight="1"
             android:layout_marginRight="50dp"
             android:layout_marginLeft="10dp"
@@ -64,38 +64,38 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:layout_marginTop="10dp"
-        >
+        android:layout_marginTop="10dp" >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="网络地址:"
+            android:text="所属类型:"
             android:textColor="@color/black"
-            android:id="@+id/Dialog_BlogUrl_txt"
+            android:id="@+id/textView6"
             android:layout_marginLeft="20dp" />
 
-        <EditText
+        <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Dialog_BlogUrl_etxt"
+            android:id="@+id/MyBlog_spinner"
             android:layout_weight="1"
             android:layout_marginRight="50dp"
             android:layout_marginLeft="10dp"
-            android:text="http://" />
+            />
+
     </LinearLayout>
 
     <Button
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:text="新建"
+        android:text="订阅"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:background="@color/red_dark"
-        android:id="@+id/Dialog_Blog_btn"
+        android:id="@+id/Dialog_MyBlog_btn"
         android:layout_marginTop="30dp"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>

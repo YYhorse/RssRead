@@ -1,4 +1,4 @@
-package com.rssread.www.Util;
+package com.rssread.www.SaveUtil;
 
 import com.rssread.www.Adapter.Item.BlogItem;
 

@@ -1,4 +1,4 @@
-package com.rssread.www.Util;
+package com.rssread.www.SaveUtil;
 
 /**
  * Created by Administrator on 2017-10-21.
@@ -18,8 +18,8 @@ public class PrefUtils {
 
     //------------使用------------------//
     public static String getMemoryString(String key){ return getString(BaseApplication.getInstance(),key,""); }
-    public static String getMemoryBlogString(String key) {return getString(BaseApplication.getInstance(),key,"{\"blogItemList\":[{\"Title\":\"新浪博客\",\"Url\":\"https://sina.cn/?vt=4\"},{\"Title\":\"博客园\",\"Url\":\"https://www.cnblogs.com\"},{\"Title\":\"网易博客\",\"Url\":\"http://blog.163.com/\"},{\"Title\":\"博客中国\",\"Url\":\"http://fengbaohua.blogchina.com/\"}]}");}
-    public static String getMemoryMyBlogString(String key) {return getString(BaseApplication.getInstance(),key,"{\"MyblogList\":[{\"blogCategroy\":\"技术文章\",\"blogInfo\":[{\"Title\":\"腾讯X5浏览服务\",\"Url\":\"http://x5.tencent.com/\"}]},{\"blogCategroy\":\"Blog主\",\"blogInfo\":[]},{\"blogCategroy\":\"明星消息\",\"blogInfo\":[]},{\"blogCategroy\":\"体坛风云\",\"blogInfo\":[]},{\"blogCategroy\":\"奇闻怪事\",\"blogInfo\":[]}]}\n");}
+    public static String getMemoryBlogString(String key) {return getString(BaseApplication.getInstance(),key,"{\"blogItemList\":[{\"Title\":\"微博\",\"Url\":\"https://weibo.com/\"},{\"Title\":\"CSDN\",\"Url\":\"https://www.csdn.net/\"},{\"Title\":\"新浪博客\",\"Url\":\"https://sina.cn/?vt=4\"},{\"Title\":\"博客园\",\"Url\":\"https://www.cnblogs.com\"},{\"Title\":\"网易博客\",\"Url\":\"http://blog.163.com/\"},{\"Title\":\"博客中国\",\"Url\":\"http://fengbaohua.blogchina.com/\"}]}");}
+    public static String getMemoryMyBlogString(String key) {return getString(BaseApplication.getInstance(),key,"{\"MyblogList\":[{\"blogCategroy\":\"技术文章\",\"blogInfo\":[{\"Title\":\"腾讯X5浏览服务\",\"Url\":\"http://x5.tencent.com/\"}]},{\"blogCategroy\":\"Blog主\",\"blogInfo\":[]},{\"blogCategroy\":\"明星消息\",\"blogInfo\":[{\"Title\":\"冯提莫\",\"Url\":\"https://m.weibo.cn/u/1672384324?uid\\\\u003d1672384324\\\\u0026luicode\\\\u003d10000011\\\\u0026lfid\\\\u003d102803\\\\u0026featurecode\\\\u003d20000320\"}]},{\"blogCategroy\":\"主播视频\",\"blogInfo\":[{\"Title\":\"Miss大小姐直播_Miss大小姐直播间_Miss大小姐直播间地址_虎牙直播\",\"Url\":\"https://m.huya.com/miss\"}]},{\"blogCategroy\":\"体坛风云\",\"blogInfo\":[]},{\"blogCategroy\":\"奇闻怪事\",\"blogInfo\":[]}]}");}
     public static void setMemoryString(String key,String value) {   putString(BaseApplication.getInstance(),key,value); }
 
     public static Boolean getMemoryBoolean(String key) { return getBoolean(BaseApplication.getInstance(),key,true);}
